@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nl.devapp.iboodnotifications" >
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"></uses-permission>
+
+    <permission android:name="nl.devapp.iboodnotifications.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="nl.devapp.iboodnotifications.permission.C2D_MESSAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".OpenTitleActivity"
+            android:label="@string/pref_open_title_contains" >
+        </activity>
+
+        <service
+            android:name=".services.HuntService"
+            android:exported="false"
+            android:enabled="true">
+        </service>
+
+        <service
+            android:name=".services.RegisterService"
+            android:exported="false"
+            android:enabled="true">
+        </service>
+
+        <receiver
+            android:name=".receivers.NotificationReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="nl.devapp.iboodnotifications" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receivers.RegisterReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:path="nl.devapp.iboodnotifications" android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

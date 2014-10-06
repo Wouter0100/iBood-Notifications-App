@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="ibood_language"
+        android:title="@string/pref_ibood_langauge"
+        android:defaultValue="nl"
+        android:entries="@array/pref_ibood_langauge_titles"
+        android:entryValues="@array/pref_ibood_langauge_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+
+    <ListPreference
+        android:key="when_enabled"
+        android:title="@string/pref_when_enabled"
+        android:defaultValue="both"
+        android:entries="@array/pref_when_enabled_titles"
+        android:entryValues="@array/pref_when_enabled_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+
+    <ListPreference
+        android:key="realtime_hunt"
+        android:title="@string/prof_realtime_hunt"
+        android:defaultValue="wifi"
+        android:entries="@array/prof_realtime_hunt_titles"
+        android:entryValues="@array/prof_realtime_hunt_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+</PreferenceScreen>

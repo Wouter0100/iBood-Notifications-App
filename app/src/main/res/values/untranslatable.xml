@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">iBood Notifications</string>
+
+    <string name="api_url">http://iboodnotifications.01d.eu:8080/</string>
+
+</resources>
